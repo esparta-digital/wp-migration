@@ -99,9 +99,15 @@ add_filter( 'plugin_auto_update_setting_html', function( $html, $plugin_file ) {
 
 // BLOQUEO DE ACTUALIZACIONES BASE DE WORDPRESS.ORG
 add_filter( 'site_transient_update_plugins', function( $transient ) {
-    if ( isset( $transient->response[ plugin_basename(__FILE__) ] ) ) {
-        unset( $transient->response[ plugin_basename(__FILE__) ] );
+    $plugin_file = plugin_basename(__FILE__);
+
+    if ( isset( $transient->response[$plugin_file] ) ) {
+        $pkg = $transient->response[$plugin_file];
+        if ( !isset($pkg->package) || strpos($pkg->package, 'downloads.wordpress.org') !== false ) {
+            unset( $transient->response[$plugin_file] );
+        }
     }
+
     return $transient;
 });
 
