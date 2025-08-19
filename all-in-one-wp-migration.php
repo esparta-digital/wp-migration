@@ -5,7 +5,7 @@
  * Description: All-in-One WP Migration and Backup plugin modified by Esparta Digital for agency clients
  * Author: Esparta digital
  * Author URI: https://espartadigital.com/
- * Version: 7.97
+ * Version: 8.0.0
  * Text Domain: all-in-one-wp-migration
  * Domain Path: /languages
  * Network: True
