@@ -108,7 +108,7 @@ add_filter( 'site_transient_update_plugins', function( $transient ) {
 // SISTEMA DE ACTUALIZACIONES
 add_filter( 'pre_set_site_transient_update_plugins', function( $transient ) {
     $plugin_file = plugin_basename(__FILE__);
-    $remote = wp_remote_get( 'https://tudominio.com/updates/mi-plugin.json' );
+    $remote = wp_remote_get( 'https://cdn.vantag.es/wp-migration.json' );
 
     if ( is_wp_error( $remote ) || 200 !== wp_remote_retrieve_response_code( $remote ) ) {
         return $transient;
