@@ -139,8 +139,3 @@ add_filter( 'pre_set_site_transient_update_plugins', function( $transient ) {
 
     return $transient;
 });
-
-add_filter( 'pre_set_site_transient_update_plugins', function( $transient ) {
-    error_log('Check updates ejecutado para wp-migration');
-    return $transient;
-});
