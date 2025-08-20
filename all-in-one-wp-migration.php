@@ -127,7 +127,7 @@ add_filter( 'pre_set_site_transient_update_plugins', function( $transient ) {
 
     $response = json_decode( wp_remote_retrieve_body( $remote ) );
 
-    if ( isset($response->version) && version_compare( '8.0.0', $response->version, '<' ) ) {
+    if ( isset($response->version) && version_compare( '8.0.5', $response->version, '<' ) ) {
         $transient->response[$plugin_file] = (object) [
             'slug'        => dirname($plugin_file),
             'plugin'      => $plugin_file,
